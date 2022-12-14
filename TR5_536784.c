@@ -1,7 +1,11 @@
+//adiciona a biblioteca personalizada heap.h
+
 #include "heap.h"
 
 //Aluno: alan victor soares vieira 
 //matricula: 536784
+
+//cria e aloca memoria para uma struct que guardara um elemento
 
 HEAP* HEAP_create(int n, COMP* compara) {
 	HEAP* heap = malloc(sizeof(HEAP));
@@ -12,6 +16,8 @@ HEAP* HEAP_create(int n, COMP* compara) {
 
 	return heap;
 }
+
+//adiciona um elemento
 
 void HEAP_add(HEAP* heap, void* newelem) {
   if (heap->P < heap->N) {
@@ -28,6 +34,8 @@ void HEAP_add(HEAP* heap, void* newelem) {
 	heap->P++;
   }
 }
+
+//remove um elemento
 
 void* HEAP_remove(HEAP* heap) {
 	void* min = heap->elems[0];
